@@ -11,6 +11,7 @@ import Transaction from './artifacts/contracts/Transaction.sol/Transaction.json'
 const contractAddress = "PASTE_YOUR_CONTRACT_ADDRESS_HERE"
 
 function App() {
+  const [coinSend, setCoinSend] = useState(0);
   const [account, setAccount] = useState();
   const [contractAmount, setContractAmount] = useState(0);
   const [isShowModalWallet, setIsShowModalWallet] = useState(false);
@@ -58,26 +59,30 @@ function App() {
     if (!account) {
       alert('No wallet is connected')
     } else {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner()
-        const contract = new ethers.Contract(contractAddress, Transaction.abi, signer)
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner()
+      const contract = new ethers.Contract(contractAddress, Transaction.abi, signer)
 
-        let tx = {
-          value: ethers.utils.parseEther("1")
-        };
+      let tx = {
+        value: ethers.utils.parseEther(coinSend)
+      };
 
-        const transaction = await contract.addMoney(tx)
-        await transaction.wait()
+      const transaction = await contract.addMoney(tx)
+      await transaction.wait()
     }
   }
 
   async function getContractAmount() {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner()
-    const contract = new ethers.Contract(contractAddress, Transaction.abi, signer)
-    const contractAmount = await contract.getMoneyStored()
+    if (account) {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner()
+      const contract = new ethers.Contract(contractAddress, Transaction.abi, signer)
+      const contractAmount = await contract.getMoneyStored()
 
-    setContractAmount(ethers.utils.formatEther(contractAmount))
+      setContractAmount(ethers.utils.formatEther(contractAmount))
+    } else {
+      alert('No wallet is connected')
+    }
   }
 
   useEffect(() => {
@@ -99,7 +104,7 @@ function App() {
           <label>Enter Send Amount</label>
           <div className="input-swap-container">
             <div className="selected-coin"><img src="/images/one.png" alt="" /><span>ONE</span></div>
-            <input placeholder="0.00" />
+            <input onChange={e => setCoinSend(e.target.value)} placeholder="0.00" />
           </div>
           <button onClick={sendCoin}>Send</button>
         </div>
