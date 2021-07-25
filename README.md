@@ -13,9 +13,11 @@
 
 ## How to edit the contract
 1. You can edit the Transaction.sol inside the `contracts` folder.
-2. Everytime the contract is edited, you are required to compile with using command `npx hardhat compile`.
+2. Everytime you edit the contract, you are required to compile with using command `npx hardhat compile`.
 
 ## Other
 * This template can help you connect to Metamask, MathWallet and WalletConnect. But for test case, signing of contract is using ONLY Metamask. If you need to execute transaction with other wallet, you may need to edit the signing methods based on different wallets connected.
 * A simple template for beginner can play around and get the concept. Hope the UI can help also for whoever need some UI template for Hackhathon etc.
 * Happy Coding.   
+
+#ReactJS, #Hardhat, #etherjs
