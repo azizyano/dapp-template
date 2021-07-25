@@ -8,7 +8,7 @@ import { FiRefreshCw } from "react-icons/fi";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import Transaction from './artifacts/contracts/Transaction.sol/Transaction.json'
 
-const contractAddress = "0xFEe5a81D578521b55DF7C85c9Ca3F6bE59B96787"
+const contractAddress = "PASTE_YOUR_CONTRACT_ADDRESS_HERE"
 
 function App() {
   const [account, setAccount] = useState();
@@ -39,7 +39,7 @@ function App() {
   // Connect WalletConnect
   async function connectWalletConnect() {
     const walletConnectProvider = new WalletConnectProvider({
-      infuraId: "9def0e13675545d29c4e21b210e99f54"
+      infuraId: "PASTE_INFURA_ID_HERE"
     });
 
     try {
