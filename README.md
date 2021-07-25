@@ -5,3 +5,6 @@
 3. Once you done setting up the Metamask wallet with Harmony Testnet, in the file `hardhat.config.js` replace the `HARMONY_PRIVATE_KEY` with your own Harmony private key. At the bottom of the file you will see network testnet with using this private key which mean the later contract transaction will link to this account.
 4. Next, open node and run `npx hardhat run --network testnet scripts/deploy.js`, the testnet here is what we setup in the previous step. Once the command executed, you are suppose to see a line in node which mentioned contract deployed to which address, copy the address and go to `App.js`, paste the address to the line `PASTE_YOUR_CONTRACT_ADDRESS_HERE`
 5. Everything should be work now, You are now test and play around with the template. 
+
+# How it works
+![template-showcase](https://user-images.githubusercontent.com/23028389/126910316-df13e358-3d25-4158-8fb9-8bfe00ddb611.png)
