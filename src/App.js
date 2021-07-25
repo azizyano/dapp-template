@@ -58,8 +58,6 @@ function App() {
     if (!account) {
       alert('No wallet is connected')
     } else {
-
-      if (currentWallet === 'metamask') {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner()
         const contract = new ethers.Contract(contractAddress, Transaction.abi, signer)
@@ -70,26 +68,6 @@ function App() {
 
         const transaction = await contract.addMoney(tx)
         await transaction.wait()
-
-      } else {
-        const provider = new ethers.providers.Web3Provider(window.harmony);
-        // const signer = provider.getSigner()
-        // const contract = new ethers.Contract(contractAddress, Transaction.abi, signer)
-        // let tx = {
-        //   value: ethers.utils.parseEther("1")
-        // };
-
-        // const transaction = await contract.addMoney(tx)
-        // await transaction.wait()
-
-        
-        // let tx = {
-        //   value: ethers.utils.parseEther("1")
-        // };
-        // const txn = harmony.transactions.newTx(txnObject, true);
-        // const signer = await window.harmony.signTransaction(txn);
-      }
-
     }
   }
 
@@ -101,52 +79,6 @@ function App() {
 
     setContractAmount(ethers.utils.formatEther(contractAmount))
   }
-
-  async function getAccountBalance() {
-    // const provider = new ethers.providers.Web3Provider(window.ethereum)
-    // const signer = provider.getSigner()
-    // let account = await signer.getAddress()
-
-    // setAddress(await getAccountAddress())
-    // console.log(address)
-    // const [account] = await window.ethereum.request({ method: 'eth_requestAccounts' })
-    // const provider = new ethers.providers.Web3Provider(window.ethereum);
-    // const signer = provider.getSigner()
-    // console.log(await signer.getBalance(account))
-    // let roundedBalance = ethers.utils.formatEther(await provider.getBalance(account))
-    // roundedBalance = (+roundedBalance).toFixed(4)
-    // setBalance(roundedBalance)
-
-    // console.log(roundedBalance)
-  }
-
-  // call the smart contract, read the current greeting value
-  // async function fetchGreeting() {
-  //   if (typeof window.ethereum !== 'undefined') {
-  //     const provider = new ethers.providers.Web3Provider(window.ethereum)
-  //     const contract = new ethers.Contract(greeterAddress, Greeter.abi, provider)
-  //     try {
-  //       const data = await contract.greet()
-  //       console.log('data: ', data)
-  //     } catch (err) {
-  //       console.log("Error: ", err)
-  //     }
-  //   }
-  // }
-
-  // call the smart contract, send an update
-  // async function setGreeting() {
-  //   if (!greeting) return
-  //   if (typeof window.ethereum !== 'undefined') {
-  //     await requestAccount()
-  //     const provider = new ethers.providers.Web3Provider(window.ethereum);
-  //     const signer = provider.getSigner()
-  //     const contract = new ethers.Contract(greeterAddress, Greeter.abi, signer)
-  //     const transaction = await contract.setGreeting(greeting)
-  //     await transaction.wait()
-  //     fetchGreeting()
-  //   }
-  // }
 
   useEffect(() => {
   }, [])
