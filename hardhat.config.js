@@ -1,6 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 
-const HARMONY_PRIVATE_KEY = "0b84ff67a90915c219eefc1d0b5a22ceaf937f3bf5890d086b083c01eb8c3d0d";
+const HARMONY_PRIVATE_KEY = "PASTE_YOUR_PRIVATE_KEY_HERE";
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
