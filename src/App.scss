@@ -1,0 +1,183 @@
+@import './index.scss';
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-bottom: 1px solid #CCC;
+}
+
+.header .logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.header button {
+    height: 40px;
+    margin-top: 0 !important;
+}
+
+.btn-connect-wallet {
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ReactModal__Overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.ReactModal__Content {
+    width: 400px;
+    height: auto;
+    padding: 0 !important;
+    border-radius: $border-radius !important;
+    background: $color-primary !important;
+    inset: initial !important;
+}
+
+.ReactModal__Content .modal-header {
+    padding: 1em;
+}
+
+.ReactModal__Content .modal-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.ReactModal__Content .modal-content {
+    padding: 1em;
+    border: none;
+    background: inherit !important;
+}
+
+.ReactModal__Content button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0.5em !important;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.ReactModal__Content button:last-child {
+    margin-bottom: 0.5em;
+}
+
+.ReactModal__Content button img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.sending-line {
+    position: relative;
+    width: 2px;
+    height: 70px;
+    margin-bottom: -9px;
+    margin-left: auto;
+    margin-right: auto;
+    border-right: 2px dashed #00B0E5;
+}
+
+.sending-line:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -9px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    border-radius: 50%;
+    background-image: linear-gradient(to top right, #00B0E5, #00D2BC, #00E8A2);
+    border: 5px solid #031217 !important;
+    z-index: 9;
+}
+
+.card {
+    margin-bottom: 0 !important;
+    padding: 1em;
+    background: $color-primary !important;
+    border: none !important;
+    border-radius: $border-radius !important;
+}
+
+.input-swap-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-swap-container input {
+    text-align: right;
+}
+
+.selected-coin {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0.5em;
+    height: 75%;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: $color-primary;
+    border-radius: $border-radius;
+}
+
+.selected-coin img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    margin-right: 0.3em;
+}
+
+.card-receive {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row !important;
+    background-image: linear-gradient(to top right, #00B0E5, #00D2BC, #00E8A2) !important;
+    color: #000 !important;
+}
+
+.card-receive h2 {
+    margin-bottom: 0 !important;
+    color: #000 !important;
+}
+
+.icon-box {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: $color-primary;
+}
+
+.card-receive img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+}
+
+.remarks {
+    margin-top: 1em;
+    color: #888;
+    font-size: 16px;
+    font-weight: 400 !important;
+}
