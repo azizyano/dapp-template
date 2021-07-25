@@ -20,4 +20,4 @@
 * A simple template for beginner can play around and get the concept. Hope the UI can help also for whoever need some UI template for Hackhathon etc.
 * Happy Coding.   
 
-#ReactJS, #Hardhat, #etherjs
+`#ReactJS` `#Hardhat` `#etherjs`
